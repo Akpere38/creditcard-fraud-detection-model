@@ -137,6 +137,8 @@ def confusion_matrix_figure(y_true, y_pred, title="Confusion Matrix"):
 # -------------------------------
 # Sidebar — Data Source
 # -------------------------------
+st.sidebar.markdown("Please download the credit card dataset from kaggle and upload it to continue: [Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)")
+
 st.sidebar.header("Data Source")
 source = st.sidebar.radio(
     "Choose dataset:",
@@ -187,7 +189,6 @@ threshold = st.sidebar.slider(
     min_value=0.0, max_value=1.0, value=0.5, step=0.01
 ) 
 
-st.sidebar.markdown("Please download the credit card dataset from kaggle and upload it to continue: [Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)")
 # Validate columns
 has_target = "Class" in df.columns
 ok, msg = validate_columns(df, require_target=has_target)
